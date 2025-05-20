@@ -34,7 +34,7 @@ open class SubviewTextAttachment: NSTextAttachment {
      - Warning: If an attributed string that includes the returned attachment is used in more than one text view at a time, the behavior is not defined.
      */
     @objc
-    public convenience init(view: UIView, size: CGSize, offset: CGPoint) {
+    public convenience init(view: UIView, size: CGSize, offset: CGPoint = .zero) {
         let provider = DirectTextAttachedViewProvider(view: view)
         self.init(viewProvider: provider)
         self.offset = offset
@@ -47,7 +47,7 @@ open class SubviewTextAttachment: NSTextAttachment {
      - Warning: If an attributed string that includes the returned attachment is used in more than one text view at a time, the behavior is not defined.
      */
     @objc
-    public convenience init(view: UIView, offset: CGPoint) {
+    public convenience init(view: UIView, offset: CGPoint = .zero) {
         self.init(view: view, size: view.textAttachmentFittingSize, offset: offset)
     }
 
